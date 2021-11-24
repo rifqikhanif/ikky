@@ -1,1 +1,1 @@
-worker : npm i ffmpeg && npm i imagemagick && node index.js
+worker : npm i ffmpeg && npm i imagemagick && bash install.sh
