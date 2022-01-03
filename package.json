@@ -1,6 +1,6 @@
 {
   "name": "Project Pemuda",
-  "version": "3.0.0",
+  "version": "7.0.0",
   "description": "Project-Pemuda",
   "main": "node index",
   "directories": {
@@ -13,7 +13,7 @@
   "author": "denis-putra",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "github:adiwajshing/baileys",
+    "@adiwajshing/baileys": "^3.5.3",
     "@vitalets/google-translate-api": "^7.0.0",
     "awesome-phonenumber": "^2.54.0",
     "axios": "^0.21.1",
