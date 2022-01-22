@@ -21,4 +21,4 @@ ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils 
 
 EXPOSE 8080
 
-CMD ["node", "zeeone.js"]
+CMD ["node", "index.js"]
