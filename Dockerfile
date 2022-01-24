@@ -6,6 +6,18 @@ COPY package*.json ./
 
 
 COPY . .
+RUN apt-get update && \
+  apt-get install -y \
+  neofetch \
+  ffmpeg \
+  wget \
+  chromium \ 
+  imagemagick && \
+  rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g npm@latest
+RUN npm instal pm2 -g
+
 
 RUN set -x \
 && apt-get update \
@@ -16,9 +28,8 @@ libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss
 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget --yes --fix-missing \
 && wget --no-check-certificate https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 && dpkg -i google-chrome-stable_current_amd64.deb || apt -y -f install \
-&& rm google-chrome-stable_current_amd64.deb \
 && apt autoremove --yes
 
 EXPOSE 8080
 
-CMD ["node", "index.js"]
+CMD ["pm2-runtime", "index.js"]`
